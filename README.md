@@ -1,28 +1,16 @@
 # SymmetricHealthPOC
 
 To run:
-Step 1: Clone Repo
-
-git clone https://github.com/eume1/SymmetricHealthPOC.git
-
-Step 2: cd into directory with code
-
-cd SymmetricHealthPOC/process
+Step 1: git clone https://github.com/eume1/SymmetricHealthPOC.git
 
 
-Step 3: Run code
-
-python dataProcess.py
+Step 2: cd SymmetricHealthPOC/process
 
 
-Step 3 will pull down the various code bases from the web and perform joins.
-
-It will also emit CSV & JSONs of processed data
+Step 3: python dataProcess.py
 
 
-Once Step 3 is complete, you can now query the data.
-
-To query based on catalog number, run:
+Step 3 will pull down the various code bases from the web and perform joins. It will also emit CSV & JSONs of processed data. Once Step 3 is complete, you can now query the data. To query based on catalog number, run:
 
 python dataRetrival.py catalog_no {catalog_number}
 
