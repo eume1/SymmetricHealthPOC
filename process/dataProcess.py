@@ -108,7 +108,7 @@ licence_catalog_join_with_licence = pd.merge(licence_catalog_join, active_licens
 licence_catalog_with_licence_and_company = licence_catalog_join_with_licence.merge(company_df, 'outer')
 
 licence_catalog_with_licence_and_company.drop_duplicates().to_json('aligned.json', orient='records')
-licence_catalog_with_licence_and_company.drop_duplicates().to_csv('aligned.csv', orient='records')
+licence_catalog_with_licence_and_company.drop_duplicates().to_csv('aligned.csv')
 
 print('There are ' + str(licence_catalog_join.shape[0]) + ' matched devices in in both GUDID & MDALL')
 print('There are ' + str(active_device_identifier_df.shape[0] - licence_catalog_join.shape[0]) + ' in MDALL ONLY')
