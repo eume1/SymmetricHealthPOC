@@ -15,12 +15,12 @@ if (sys.argv[1] == 'catalog_no'):
 	description = output['deviceDescription'].head(1)
 	licenseName = output['licence_name'].head(1)
 elif (sys.argv[1] == 'version_no'):
-	output = data_df.loc[ (data_df['versionModelNumber'] == sys.argv[2]) ]
+	output = data_df.loc[(data_df['versionModelNumber'] == sys.argv[2])]
 	description = output['deviceDescription'].head(1)
-	licenseName = output['licence_name'].head(1)	
+	licenseName = output['licence_name'].head(1)
 
 
-print('Catalog #: ' + sys.argv[2] )
+print('Catalog #: ' + sys.argv[2])
 print('')
 print('Gudid Description: ' + str(description).replace('Name: deviceDescription, dtype: object',''))
 print('MDALL Description: ' + str(licenseName).replace('Name: licence_name, dtype: object','') )

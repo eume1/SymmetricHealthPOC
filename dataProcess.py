@@ -21,7 +21,7 @@ gudid_url = 'https://accessgudid.nlm.nih.gov/release_files/download/gudid_full_r
 
 
 #Gudid Extraction
-'''
+
 req = requests.get(gudid_url)
 file = open(gudidZip, 'wb')
 for chunk in req.iter_content(100000):
@@ -31,7 +31,7 @@ file.close()
 
 with zipfile.ZipFile(gudidZip) as zf:
     zf.extractall(gudidZip.split('.')[0])
-'''
+
 
 gudid_items = []
 
@@ -107,7 +107,8 @@ licence_catalog_join_with_licence = pd.merge(licence_catalog_join, active_licens
 #licence_catalog_with_licence_and_company = pd.merge(licence_catalog_join_with_licence, company_df, left_on='company_id', right_on='company_id', how='outer')
 licence_catalog_with_licence_and_company = licence_catalog_join_with_licence.merge(company_df, 'outer')
 
-licence_catalog_with_licence_and_company.to_json('licence_catalog_with_licence_and_company.json', orient='records').drop_duplicates()
+licence_catalog_with_licence_and_company.drop_duplicates().to_json('aligned.json', orient='records')
+licence_catalog_with_licence_and_company.drop_duplicates().to_csv('aligned.csv', orient='records')
 
 print('There are ' + str(licence_catalog_join.shape[0]) + ' matched devices in in both GUDID & MDALL')
 print('There are ' + str(active_device_identifier_df.shape[0] - licence_catalog_join.shape[0]) + ' in MDALL ONLY')
