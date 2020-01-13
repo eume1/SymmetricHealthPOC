@@ -7,7 +7,7 @@ import sys
 description = ''
 licenseName = ''
 
-path_to_json = str(os.getcwd()) + "\\" + 'licence_catalog_with_licence_and_company.json'
+path_to_json = str(os.getcwd()) + "\\" + 'aligned.json'
 data_df = pd.read_json(path_to_json).drop_duplicates()
 
 if (sys.argv[1] == 'catalog_no'):
