@@ -2,6 +2,7 @@
 
 To run:
 Step 1: Clone Repo
+
 git clone https://github.com/eume1/SymmetricHealthPOC.git
 
 Step 2: cd into directory with code
